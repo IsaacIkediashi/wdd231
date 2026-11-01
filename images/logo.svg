@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Riverview Chamber of Commerce icon</title>
+  <desc id="desc">Navy city skyline with a gold growth arc, representing business and community partnership.</desc>
+  <rect width="64" height="64" rx="10" fill="#FFFFFF"/>
+  <g stroke="#12345A" stroke-linejoin="round">
+    <path d="M12 39V25l8-5 8 5v14Z" fill="#12345A" stroke-width="1.2"/>
+    <path d="M23 39V14l9-6v31Z" fill="#12345A" stroke-width="1.2"/>
+    <path d="M34 39V20l7 4v15Z" fill="#12345A" stroke-width="1.2"/>
+    <path d="M15 28v8m5-10v10m6-8v8m2-19v19m5-21v21m5-13v13" fill="none" stroke="#FFFFFF" stroke-width="1"/>
+  </g>
+  <path d="M7 42C5 31 13 23 27 19C19 26 17 32 20 37C29 31 40 29 51 33C57 35 58 41 54 45" fill="none" stroke="#C9962E" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M17 40l9 5 7-4c2-1 4 0 6 2l7 5c2 1 0 4-2 3l-6-4m-12-2-4 5c-1 2 2 4 4 2l4-4m0 0-2 4c-1 2 2 4 4 2l3-4m0 0 1 2c1 2 4 1 4-1" fill="none" stroke="#12345A" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

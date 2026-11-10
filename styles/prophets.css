@@ -1,0 +1,58 @@
+body{
+ font-family: "Roboto", sans-serif;
+ text-align: center;
+ background: #f2f7fd;
+}
+
+main{
+ margin: 1.75rem 120px;
+}
+
+#cards{
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+ gap: 40px;
+}
+
+.prophet{
+ text-align: center;
+ border-radius: 20px;
+ box-shadow: 0 12px 12px rgba(0, 0, 0, 0.2);
+ padding: 1rem 3%;
+ color: rgb(14, 2, 25);
+ transition: transform 0.25s ease-in-out;
+ background: rgb(42, 211, 241);
+}
+
+#add-info{
+ line-height: 1.8;
+}
+
+.prophet::first-line{
+  color: rgb(166, 82, 240);
+  padding: .85rem;
+}
+
+footer{
+ border-radius: 20px;
+ padding: 2rem 8%;
+ background: rgb(248, 162, 2);
+ text-align: center;
+ font-weight: bold;
+ font-size: 17px;
+ color: rgb(250, 254, 255);
+}
+
+img{
+ margin-top: .65rem;
+ box-shadow: 0 12px 12px rgba(0, 0, 0, 0.3);
+ border-radius: 16px;
+ transition: transform 0.25s ease-in-out;
+}
+
+img:hover{
+ transform: scale(1.04);
+}
+section:hover{
+ transform: translateY(-10px);
+}

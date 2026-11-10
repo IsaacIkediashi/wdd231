@@ -1,0 +1,66 @@
+
+[
+    {
+        "companyName": "Lagos Technology Hub",
+        "address": "15 Allen Avenue, Ikeja, Lagos",
+        "phone": "+234 801 111 2222",
+        "website": "https://www.andela.com",
+        "image": "https://ui-avatars.com/api/?name=Lagos+Technology+Hub&background=174EA6&color=FFFFFF&size=200&bold=true",
+        "membershipLevel": 3,
+        "tagline": "Technology and Innovation"
+    },
+    {
+        "companyName": "Riverview Properties",
+        "address": "22 Victoria Island, Lagos",
+        "phone": "+234 802 222 3333",
+        "website": "https://www.buyrentkenya.com",
+        "image": "https://ui-avatars.com/api/?name=Riverview+Properties&background=23966B&color=FFFFFF&size=200&bold=true",
+        "membershipLevel": 2,
+        "tagline": "Real Estate and Property"
+    },
+    {
+        "companyName": "Greenfield Foods",
+        "address": "8 Marina Road, Lagos Island",
+        "phone": "+234 803 333 4444",
+        "website": "https://www.dangote.com",
+        "image": "https://ui-avatars.com/api/?name=Greenfield+Foods&background=477B45&color=FFFFFF&size=200&bold=true",
+        "membershipLevel": 1,
+        "tagline": "Food and Agriculture"
+    },
+    {
+        "companyName": "Prime Medical Services",
+        "address": "12 Admiralty Way, Lekki, Lagos",
+        "phone": "+234 804 444 5555",
+        "website": "https://www.reliancehmo.com",
+        "image": "https://ui-avatars.com/api/?name=Prime+Medical+Services&background=167D9A&color=FFFFFF&size=200&bold=true",
+        "membershipLevel": 3,
+        "tagline": "Healthcare Services"
+    },
+    {
+        "companyName": "Bright Future Academy",
+        "address": "30 Agege Motor Road, Lagos",
+        "phone": "+234 805 555 6666",
+        "website": "https://www.coursera.org",
+        "image": "https://ui-avatars.com/api/?name=Bright+Future+Academy&background=7451A6&color=FFFFFF&size=200&bold=true",
+        "membershipLevel": 2,
+        "tagline": "Education and Training"
+    },
+    {
+        "companyName": "Coastal Logistics",
+        "address": "5 Apapa Road, Lagos",
+        "phone": "+234 806 666 7777",
+        "website": "https://www.dhl.com",
+        "image": "https://ui-avatars.com/api/?name=Coastal+Logistics&background=315B76&color=FFFFFF&size=200&bold=true",
+        "membershipLevel": 1,
+        "tagline": "Transportation and Logistics"
+    },
+    {
+        "companyName": "Elite Financial Consultants",
+        "address": "18 Broad Street, Lagos Island",
+        "phone": "+234 807 777 8888",
+        "website": "https://www.pwc.com",
+        "image": "https://ui-avatars.com/api/?name=Elite+Financial+Consultants&background=986B24&color=FFFFFF&size=200&bold=true",
+        "membershipLevel": 3,
+        "tagline": "Financial Consulting"
+    }
+]

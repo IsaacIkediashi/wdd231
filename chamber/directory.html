@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Discover local businesses, services, and organizations in the Lagos Business Chamber directory.">
+    <meta name="author" content="Isaac Ikediashi">
+
+    <meta property="og:title" content="Lagos Business Chamber | Directory">
+    <meta property="og:description" content="Discover and connect with businesses across Lagos, Nigeria.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://username.github.io/wdd231/chamber/images/og-image.webp">
+    <meta property="og:url" content="https://username.github.io/wdd231/chamber/directory.html">
+
+    <title>Business Directory | Lagos Business Chamber</title>
+
+    <link rel="icon" href="../favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+
+    <script src="scripts/directory.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <a href="home.html" id="header-logo">
+            <img src="images/logo.svg" alt="Lagos Business Chamber logo" width="64" height="64">
+            <span>Lagos Business Chamber</span>
+        </a>
+
+        <nav class="navigation" id="navigation">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="directory.html" class="current" aria-current="page">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+            </ul>
+        </nav>
+
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+            ◐
+        </button>
+
+        <button
+            class="menu"
+            id="menu"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="navigation">
+        </button>
+    </header>
+
+    <main>
+        <h1>Directory</h1>
+
+        <div class="view-buttons">
+            <button type="button" id="grid-view" class="active" aria-pressed="true">
+                Grid
+            </button>
+
+            <button type="button" id="list-view" aria-pressed="false">
+                List
+            </button>
+        </div>
+
+        <section class="directory-grid" id="members" aria-label="Business directory">
+            <p class="loading">Loading business directory...</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+
+            <div class="footer-contact">
+                <h3>Lagos Business Chamber</h3>
+                <p>Lagos, Nigeria</p>
+                <p>Email: isaacikediashi192@example.com</p>
+                <p>Phone: +234 800 000 0000</p>
+            </div>
+
+            <div class="footer-social">
+                <a href="https://www.facebook.com/" aria-label="Facebook">f</a>
+                <a href="https://www.linkedin.com/" aria-label="LinkedIn">in</a>
+                <a href="https://www.instagram.com/" aria-label="Instagram">◎</a>
+            </div>
+
+            <div class="footer-development">
+                <p>Isaac Ikediashi</p>
+                <p>WDD 231 - Web Frontend Development I</p>
+                <p>&copy; <span id="current-year"></span> Lagos Business Chamber</p>
+                <p>Last Modified: <span id="lastModified"></span></p>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>

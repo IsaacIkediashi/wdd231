@@ -214,11 +214,6 @@ h1 {
 }
 
 
-.directory-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
 
 .directory-list .business-card {
     width: 100%;

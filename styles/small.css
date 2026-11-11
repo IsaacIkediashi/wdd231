@@ -1,17 +1,51 @@
 
+/* ==============================
+   CSS RESET
+================================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ==============================
+   ROOT VARIABLES
+================================= */
+
 :root {
     --primary-color: #174ea6;
     --secondary-color: #123b75;
     --accent-color: #11745e;
+
     --background-color: #f3f6fb;
+    --surface-color: #ffffff;
     --text-color: #1e3046;
+    --muted-color: #52647a;
+
+    --border-color: #e0e7f0;
+    --border-light: #d9e2ef;
+    --border-muted: #b9e5d6;
+
+    --success-background: #eaf7f1;
+    --success-light: #d1eee2;
+    --success-text: #075c43;
+
+    --neutral-background: #f8fafc;
+    --neutral-light: #e5eaf1;
+    --neutral-text: #34465c;
+
+    --focus-color: #f4c95d;
+    --footer-background: #102c50;
+    --footer-muted: #d6e0ed;
+
+    --shadow-color: #19325a;
+    --white: #ffffff;
 }
+
+/* ==============================
+   GLOBAL STYLES
+================================= */
 
 body {
     font-family: "Roboto", sans-serif;
@@ -35,6 +69,10 @@ button {
     font: inherit;
 }
 
+/* ==============================
+   HEADER
+================================= */
+
 header {
     position: relative;
     display: flex;
@@ -42,8 +80,8 @@ header {
     justify-content: space-between;
     gap: 1rem;
     padding: 1rem 5%;
-    background: var(--primary-color);
-    color: #ffffff;
+    background-color: var(--primary-color);
+    color: var(--white);
     z-index: 10;
     box-shadow: 0 3px 12px rgb(20 45 85 / 12%);
 }
@@ -67,6 +105,10 @@ header {
     overflow-wrap: anywhere;
 }
 
+/* ==============================
+   NAVIGATION
+================================= */
+
 .navigation {
     display: none;
     list-style: none;
@@ -81,8 +123,8 @@ header {
     border-radius: 8px;
     font-size: 1.8rem;
     font-weight: 700;
-    background: transparent;
-    color: #ffffff;
+    background-color: transparent;
+    color: var(--white);
     cursor: pointer;
 }
 
@@ -94,12 +136,20 @@ header {
     content: "×";
 }
 
+/* ==============================
+   FOCUS ACCESSIBILITY
+================================= */
+
 .menu:focus-visible,
 a:focus-visible,
 button:focus-visible {
-    outline: 3px solid #f4c95d;
+    outline: 3px solid var(--focus-color);
     outline-offset: 3px;
 }
+
+/* ==============================
+   MOBILE NAVIGATION
+================================= */
 
 .navigation.show {
     display: flex;
@@ -109,7 +159,7 @@ button:focus-visible {
     left: 0;
     width: 100%;
     padding: 0.5rem 5% 1rem;
-    background: var(--secondary-color);
+    background-color: var(--secondary-color);
     box-shadow: 0 8px 12px rgb(0 0 0 / 12%);
 }
 
@@ -127,9 +177,13 @@ button:focus-visible {
 
 .navigation a:hover,
 .navigation a.active {
-    background: #ffffff;
+    background-color: var(--white);
     color: var(--secondary-color);
 }
+
+/* ==============================
+   MAIN CONTENT
+================================= */
 
 main {
     width: min(1100px, 90%);
@@ -145,8 +199,8 @@ h1 {
 
 h2 {
     padding: 0.9rem 1rem;
-    background: var(--secondary-color);
-    color: #ffffff;
+    background-color: var(--secondary-color);
+    color: var(--white);
     font-size: 1.05rem;
     line-height: 1.4;
 }
@@ -154,6 +208,10 @@ h2 {
 p {
     max-width: 65ch;
 }
+
+/* ==============================
+   HOME LAYOUT
+================================= */
 
 .home-layout {
     display: grid;
@@ -164,9 +222,9 @@ p {
 .panel {
     min-width: 0;
     overflow: hidden;
-    border: 1px solid #e0e7f0;
+    border: 1px solid var(--border-color);
     border-radius: 12px;
-    background: #ffffff;
+    background-color: var(--surface-color);
     box-shadow: 0 4px 16px rgb(25 50 90 / 5%);
 }
 
@@ -177,6 +235,10 @@ p {
 .about-panel p + p {
     margin-top: 1rem;
 }
+
+/* ==============================
+   PHOTO PLACEHOLDER
+================================= */
 
 .photo-placeholder {
     display: flex;
@@ -194,10 +256,10 @@ p {
     width: 100px;
     height: 100px;
     margin-bottom: 0.8rem;
-    border: 4px solid #ffffff;
+    border: 4px solid var(--white);
     border-radius: 50%;
-    background: var(--primary-color);
-    color: #ffffff;
+    background-color: var(--primary-color);
+    color: var(--white);
     font-size: 2rem;
     font-weight: 700;
     box-shadow: 0 4px 15px rgb(23 78 166 / 15%);
@@ -208,9 +270,13 @@ p {
 }
 
 .photo-placeholder span {
-    color: #52647a;
+    color: var(--muted-color);
     font-size: 0.9rem;
 }
+
+/* ==============================
+   CERTIFICATE PANEL
+================================= */
 
 .certificate-panel {
     grid-column: 1 / -1;
@@ -228,14 +294,14 @@ p {
     padding: 0.65rem 0.8rem;
     border: 1px solid var(--primary-color);
     border-radius: 7px;
-    background: #ffffff;
+    background-color: var(--surface-color);
     color: var(--primary-color);
     font-weight: 700;
     cursor: pointer;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.filter-buttons{
+.filter-buttons {
     display: flex;
     gap: 20px;
     flex-direction: column;
@@ -245,17 +311,21 @@ p {
     font-size: 1.2rem;
 }
 
-.filter-buttons > div{
-   display: flex;
-   width: 50%;
-   justify-content: space-between; 
+.filter-buttons > div {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
 }
 
 .filter-button:hover,
 .filter-button.active {
-    background: var(--primary-color);
-    color: #ffffff;
+    background-color: var(--primary-color);
+    color: var(--white);
 }
+
+/* ==============================
+   COURSE SUMMARY
+================================= */
 
 .course-summary {
     display: flex;
@@ -263,7 +333,7 @@ p {
     align-items: center;
     gap: 0.5rem;
     margin: 1rem 1.25rem;
-    color: #52647a;
+    color: var(--muted-color);
     font-size: 0.95rem;
 }
 
@@ -271,6 +341,10 @@ p {
     color: var(--accent-color);
     font-weight: 700;
 }
+
+/* ==============================
+   COURSE GRID
+================================= */
 
 .course-grid {
     display: grid;
@@ -287,17 +361,17 @@ p {
     min-width: 0;
     min-height: 125px;
     padding: 1rem;
-    border: 1px solid #d9e2ef;
+    border: 1px solid var(--border-light);
     border-left: 5px solid #8a9bb0;
     border-radius: 8px;
-    background: #f8fafc;
+    background-color: var(--neutral-background);
     overflow-wrap: anywhere;
 }
 
 .course-card.completed {
-    border-color: #b9e5d6;
+    border-color: var(--border-muted);
     border-left-color: var(--accent-color);
-    background: #eaf7f1;
+    background-color: var(--success-background);
 }
 
 .course-code {
@@ -326,38 +400,46 @@ p {
     gap: 0.25rem;
     padding: 0.25rem 0.5rem;
     border-radius: 20px;
-    background: #e5eaf1;
-    color: #34465c;
+    background-color: var(--neutral-light);
+    color: var(--neutral-text);
     font-size: 0.78rem;
     font-weight: 700;
 }
 
 .completed .course-status {
-    background: #d1eee2;
-    color: #075c43;
+    background-color: var(--success-light);
+    color: var(--success-text);
 }
+
+/* ==============================
+   COMPLETION NOTE
+================================= */
 
 .completion-note {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     padding: 1rem 1.25rem 1.25rem;
-    color: #52647a;
+    color: var(--muted-color);
     font-size: 0.85rem;
 }
 
 .completion-key {
     width: 13px;
     height: 13px;
+    border: 1px solid var(--border-muted);
     border-radius: 3px;
-    border: 1px solid #b9e5d6;
-    background: #eaf7f1;
+    background-color: var(--success-background);
 }
 
 .empty-message {
     padding: 1rem;
-    color: #52647a;
+    color: var(--muted-color);
 }
+
+/* ==============================
+   FOOTER
+================================= */
 
 footer {
     display: flex;
@@ -365,8 +447,8 @@ footer {
     align-items: center;
     gap: 1rem;
     padding: 1.75rem 5%;
-    background: #102c50;
-    color: #ffffff;
+    background-color: var(--footer-background);
+    color: var(--white);
     text-align: center;
 }
 
@@ -383,12 +465,12 @@ footer {
     height: 44px;
     border: 1px solid rgb(255 255 255 / 35%);
     border-radius: 50%;
-    color: #ffffff;
+    color: var(--white);
     transition: background-color 0.2s ease;
 }
 
 .social-links a:hover {
-    background: var(--accent-color);
+    background-color: var(--accent-color);
 }
 
 .social-links svg {
@@ -402,6 +484,6 @@ footer {
 }
 
 .last-modified {
-    color: #d6e0ed;
+    color: var(--footer-muted);
     overflow-wrap: anywhere;
 }

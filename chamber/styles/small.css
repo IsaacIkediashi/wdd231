@@ -6,13 +6,19 @@
 }
 
 :root {
-    --primary-color: #174ea6;
-    --secondary-color: #e8eef7;
-    --accent-color: #23966b;
-    --background-color: #f8fafc;
-    --text-color: #1f2937;
-    --card-color: #e5e7eb;
-    --border-color: #b8bec7;
+    --primary-color: rgb(23, 78, 166);
+    --secondary-color: rgb(232, 238, 247);
+    --accent-color: rgb(35, 150, 107);
+    --background-color: rgb(248, 250, 252);
+    --text-color: rgb(31, 41, 55);
+    --card-color: rgb(229, 231, 235);
+    --border-color: rgb(184, 190, 199);
+    --white-color: rgb(255, 255, 255);
+    --dark-mode-background: rgb(23, 32, 51);
+    --dark-mode-card: rgb(38, 52, 73);
+    --dark-mode-border: rgb(82, 96, 120);
+    --dark-mode-link: rgb(159, 194, 255);
+    --shadow-color: rgb(0, 0, 0, 0.08);
 }
 
 body {
@@ -23,11 +29,11 @@ body {
 }
 
 body.dark-mode {
-    --background-color: #172033;
-    --text-color: #f8fafc;
-    --card-color: #263449;
-    --secondary-color: #263449;
-    --border-color: #526078;
+    --background-color: var(--dark-mode-background);
+    --text-color: var(--white-color);
+    --card-color: var(--dark-mode-card);
+    --secondary-color: var(--dark-mode-card);
+    --border-color: var(--dark-mode-border);
 }
 
 /* HEADER */
@@ -96,7 +102,7 @@ header {
 .navigation a:hover,
 .navigation a.current {
     background: var(--primary-color);
-    color: #ffff;
+    color: var(--white-color);
 }
 
 /* THEME AND HAMBURGER BUTTONS */
@@ -158,7 +164,7 @@ h1 {
 .view-buttons button:hover,
 .view-buttons button.active {
     background: var(--primary-color);
-    color: #ffff;
+    color: var(--white-color);
 }
 
 /* BUSINESS DIRECTORY */
@@ -173,7 +179,7 @@ h1 {
     background: var(--card-color);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, .08);
+    box-shadow: 0 2px 5px var(--shadow-color);
 }
 
 .business-heading {
@@ -213,8 +219,6 @@ h1 {
     overflow-wrap: anywhere;
 }
 
-
-
 .business-info p {
     margin: .35rem 0;
 }
@@ -229,7 +233,7 @@ h1 {
 }
 
 .dark-mode .business-info a {
-    color: #9fc2ff;
+    color: var(--dark-mode-link);
 }
 
 .loading {
@@ -291,7 +295,7 @@ footer {
     height: 48px;
     border-radius: 50%;
     background: var(--primary-color);
-    color: #ffff;
+    color: var(--white-color);
     text-decoration: none;
     font-weight: 700;
     font-size: 1.1rem;

@@ -1,227 +1,169 @@
-
+// Shared navigation, theme, footer, and business directory functionality.
 const navigation = document.querySelector(".navigation");
 const menu = document.querySelector(".menu");
-
 const membersContainer = document.querySelector("#members");
 const gridButton = document.querySelector("#grid-view");
 const listButton = document.querySelector("#list-view");
 
-// HAMBURGER MENU
-
+// Hamburger navigation
 if (navigation && menu) {
-    menu.addEventListener("click", () => {
-        const isOpen = menu.getAttribute("aria-expanded") === "true";
+  menu.addEventListener("click", () => {
+    const isOpen = menu.getAttribute("aria-expanded") === "true";
+    menu.setAttribute("aria-expanded", String(!isOpen));
+    menu.setAttribute("aria-label", isOpen ? "Open navigation menu" : "Close navigation menu");
+    navigation.classList.toggle("show", !isOpen);
+    menu.classList.toggle("show", !isOpen);
+  });
 
-        menu.setAttribute("aria-expanded", String(!isOpen));
-
-        menu.setAttribute(
-            "aria-label",
-            isOpen ? "Open navigation menu" : "Close navigation menu"
-        );
-
-        navigation.classList.toggle("show", !isOpen);
-        menu.classList.toggle("show", !isOpen);
+  navigation.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navigation.classList.remove("show");
+      menu.classList.remove("show");
+      menu.setAttribute("aria-expanded", "false");
+      menu.setAttribute("aria-label", "Open navigation menu");
     });
-
-    navigation.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-            navigation.classList.remove("show");
-            menu.classList.remove("show");
-
-            menu.setAttribute("aria-expanded", "false");
-            menu.setAttribute("aria-label", "Open navigation menu");
-        });
-    });
+  });
 }
 
-// GRID VIEW
-
-gridButton.addEventListener("click", () => {
+// Directory view controls
+if (membersContainer && gridButton && listButton) {
+  gridButton.addEventListener("click", () => {
     membersContainer.classList.remove("directory-list");
     membersContainer.classList.add("directory-grid");
-
     gridButton.classList.add("active");
     listButton.classList.remove("active");
-
     gridButton.setAttribute("aria-pressed", "true");
     listButton.setAttribute("aria-pressed", "false");
-});
+  });
 
-// LIST VIEW
-
-listButton.addEventListener("click", () => {
+  listButton.addEventListener("click", () => {
     membersContainer.classList.remove("directory-grid");
     membersContainer.classList.add("directory-list");
-
     listButton.classList.add("active");
     gridButton.classList.remove("active");
-
     listButton.setAttribute("aria-pressed", "true");
     gridButton.setAttribute("aria-pressed", "false");
-});
+  });
+}
 
-// FOOTER DATE
-
+// Footer dates
 const currentYear = document.querySelector("#current-year");
 const lastModified = document.querySelector("#lastModified");
+const now = new Date();
 
-const date = new Date();
+if (currentYear) currentYear.textContent = now.getFullYear();
+if (lastModified) lastModified.textContent = document.lastModified;
 
-if (currentYear) {
-    currentYear.textContent = date.getFullYear();
+// Theme toggle
+const themeButton = document.querySelector("#theme-toggle");
+if (themeButton) {
+  themeButton.addEventListener("click", () => {
+    const isDark = document.body.classList.toggle("dark-mode");
+    themeButton.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+    themeButton.textContent = isDark ? "☀" : "◐";
+  });
 }
-
-if (lastModified) {
-    lastModified.textContent = document.lastModified;
-}
-
-// MEMBERSHIP LEVEL
 
 function getMembership(level) {
-    if (level === 3) {
-        return "Gold Member";
-    }
-
-    if (level === 2) {
-        return "Silver Member";
-    }
-
-    return "Member";
+  const normalizedLevel = Number(level);
+  if (normalizedLevel === 3) return "Gold Member";
+  if (normalizedLevel === 2) return "Silver Member";
+  return "Member";
 }
 
-// DISPLAY MEMBERS
+function createBusinessCard(member) {
+  const card = document.createElement("article");
+  card.className = "business-card";
 
-function displayMembers(members) {
-    membersContainer.innerHTML = "";
+  const heading = document.createElement("div");
+  heading.className = "business-heading";
+  const name = document.createElement("h2");
+  name.textContent = member.companyName || "Unnamed business";
+  const tagline = document.createElement("p");
+  tagline.textContent = member.tagline || "Local Business";
+  heading.append(name, tagline);
 
-    members.forEach(member => {
-        const card = document.createElement("article");
-        card.classList.add("business-card");
+  const details = document.createElement("div");
+  details.className = "business-details";
+  const image = document.createElement("img");
+  image.src = member.image || "images/hero.svg";
+  image.alt = `${member.companyName || "Business"} logo`;
+  image.loading = "lazy";
+  image.width = 120;
+  image.height = 100;
 
-        // COMPANY HEADING
+  const info = document.createElement("div");
+  info.className = "business-info";
 
-        const heading = document.createElement("div");
-        heading.classList.add("business-heading");
+  const address = document.createElement("p");
+  const addressLabel = document.createElement("strong");
+  addressLabel.textContent = "Address: ";
+  address.append(addressLabel, document.createTextNode(member.address || "Not provided"));
 
-        const name = document.createElement("h2");
-        name.textContent = member.companyName;
+  const phone = document.createElement("p");
+  const phoneLabel = document.createElement("strong");
+  phoneLabel.textContent = "Phone: ";
+  phone.append(phoneLabel);
+  if (member.phone) {
+    const phoneLink = document.createElement("a");
+    phoneLink.href = `tel:${member.phone.replace(/[^+\d]/g, "")}`;
+    phoneLink.textContent = member.phone;
+    phone.append(phoneLink);
+  } else {
+    phone.append("Not provided");
+  }
 
-        const tagline = document.createElement("p");
-        tagline.textContent = member.tagline || "Local Business";
-
-        heading.append(name, tagline);
-
-        // COMPANY DETAILS
-
-        const details = document.createElement("div");
-        details.classList.add("business-details");
-
-        const image = document.createElement("img");
-        image.src = member.image;
-        image.alt = `${member.companyName} logo`;
-        image.loading = "lazy";
-        image.width = 120;
-        image.height = 100;
-
-        const info = document.createElement("div");
-        info.classList.add("business-info");
-
-        // ADDRESS
-
-        const address = document.createElement("p");
-        const addressLabel = document.createElement("strong");
-
-        addressLabel.textContent = "ADDRESS: ";
-        address.append(addressLabel, member.address);
-
-        // PHONE
-
-        const phone = document.createElement("p");
-        const phoneLabel = document.createElement("strong");
-
-        phoneLabel.textContent = "PHONE: ";
-
-        const phoneLink = document.createElement("a");
-        phoneLink.href = `tel:${member.phone}`;
-        phoneLink.textContent = member.phone;
-
-        phone.append(phoneLabel, phoneLink);
-
-        // WEBSITE
-
-        const website = document.createElement("p");
-        const websiteLabel = document.createElement("strong");
-
-        websiteLabel.textContent = "URL: ";
-
+  const website = document.createElement("p");
+  const websiteLabel = document.createElement("strong");
+  websiteLabel.textContent = "Website: ";
+  website.append(websiteLabel);
+  if (member.website) {
+    try {
+      const websiteUrl = new URL(member.website);
+      if (websiteUrl.protocol === "https:" || websiteUrl.protocol === "http:") {
         const websiteLink = document.createElement("a");
-        websiteLink.href = member.website;
-        websiteLink.textContent = member.website.replace(/^https?:\/\//, "");
+        websiteLink.href = websiteUrl.href;
+        websiteLink.textContent = websiteUrl.hostname.replace(/^www\./, "");
         websiteLink.target = "_blank";
         websiteLink.rel = "noopener noreferrer";
+        website.append(websiteLink);
+      } else {
+        website.append("Not provided");
+      }
+    } catch {
+      website.append("Not provided");
+    }
+  } else {
+    website.append("Not provided");
+  }
 
-        website.append(websiteLabel, websiteLink);
+  const membership = document.createElement("p");
+  const membershipLabel = document.createElement("strong");
+  membershipLabel.textContent = "Membership: ";
+  membership.append(membershipLabel, getMembership(member.membershipLevel));
 
-        // MEMBERSHIP
-
-        const membership = document.createElement("p");
-        const membershipLabel = document.createElement("strong");
-
-        membershipLabel.textContent = "MEMBERSHIP: ";
-
-        membership.append(
-            membershipLabel,
-            getMembership(member.membershipLevel)
-        );
-
-        info.append(address, phone, website, membership);
-
-        details.append(image, info);
-        card.append(heading, details);
-
-        membersContainer.append(card);
-    });
+  info.append(address, phone, website, membership);
+  details.append(image, info);
+  card.append(heading, details);
+  return card;
 }
-
-// FETCH JSON DATA
 
 async function getMembers() {
-    try {
-        const response = await fetch("data/members.json");
+  if (!membersContainer) return;
 
-        if (!response.ok) {
-            throw new Error(`HTTP error: ${response.status}`);
-        }
+  try {
+    const response = await fetch("data/members.json");
+    if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
 
-        const members = await response.json();
+    const members = await response.json();
+    if (!Array.isArray(members)) throw new Error("Members data must be an array.");
 
-        if (!Array.isArray(members)) {
-            throw new Error("Members data must be an array.");
-        }
-
-        displayMembers(members);
-
-    } catch (error) {
-        membersContainer.innerHTML =
-            "<p>Unable to load the business directory.</p>";
-
-        console.error("Directory error:", error);
-    }
-}
-
-const themeButton = document.querySelector("#theme-toggle");
-
-if (themeButton) {
-    themeButton.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
-
-        const isDark = document.body.classList.contains("dark-mode");
-
-        themeButton.setAttribute(
-            "aria-label",
-            isDark ? "Switch to light mode" : "Switch to dark mode"
-        );
-    });
+    membersContainer.replaceChildren();
+    members.forEach((member) => membersContainer.append(createBusinessCard(member)));
+  } catch (error) {
+    membersContainer.innerHTML = "<p>Unable to load the business directory. Please try again later.</p>";
+    console.error("Directory error:", error);
+  }
 }
 
 getMembers();

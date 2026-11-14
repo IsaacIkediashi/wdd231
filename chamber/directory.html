@@ -1,37 +1,138 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta name="description" content="Discover local businesses, services, and organizations in the Lagos Business Chamber directory.">
+  <meta name="author" content="Isaac Ikediashi">
+  <meta name="theme-color" content="#174ea6">
+
   <title>Business Directory | Lagos Business Chamber</title>
+
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="Lagos Business Chamber | Business Directory">
+  <meta property="og:description" content="Explore the Lagos Business Chamber directory and connect with local businesses, services, and organizations across Lagos, Nigeria.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://isaacikediashi.github.io/wdd231/chamber/directory.html">
+  <meta property="og:image" content="https://isaacikediashi.github.io/wdd231/chamber/images/og-image.webp">
+
+  <!-- Favicon -->
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/large.css">
+
+  <!-- JavaScript -->
   <script src="scripts/directory.js" defer></script>
 </head>
+
 <body>
+
   <header class="site-header">
-    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">LBC</span><span><strong>Lagos Business Chamber</strong><small>Connecting businesses. Building Lagos.</small></span></a>
-    <button class="menu" type="button" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+
+    <a class="brand" href="index.html" aria-label="Lagos Business Chamber home">
+      <span class="brand-mark" aria-hidden="true">LBC</span>
+
+      <span>
+        <strong>Lagos Business Chamber</strong>
+        <small>Connecting businesses. Building Lagos.</small>
+      </span>
+    </a>
+
+    <button
+      class="menu"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false">
+      ☰
+    </button>
+
     <nav class="navigation" aria-label="Main navigation">
-      <a href="index.html">Home</a><a class="current" href="directory.html" aria-current="page">Directory</a><a href="join.html">Join</a><a href="discover.html">Discover</a>
+      <a href="index.html">Home</a>
+      <a class="current" href="directory.html" aria-current="page">Directory</a>
+      <a href="join.html">Join</a>
+      <a href="discover.html">Discover</a>
     </nav>
-    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode">◐</button>
+
+    <button
+      id="theme-toggle"
+      class="theme-toggle"
+      type="button"
+      aria-label="Switch to dark mode">
+      ◐
+    </button>
+
   </header>
+
   <main class="page-main">
-    <div class="section-heading"><p class="eyebrow">Find a local business</p><h1>Business Directory</h1><p>Explore businesses and services across Lagos.</p></div>
-    <div class="directory-controls" aria-label="Directory display options">
-      <button id="grid-view" class="view-button active" type="button" aria-pressed="true">Grid View</button>
-      <button id="list-view" class="view-button" type="button" aria-pressed="false">List View</button>
+
+    <div class="section-heading">
+      <p class="eyebrow">Find a local business</p>
+      <h1>Business Directory</h1>
+      <p>Explore businesses and services across Lagos.</p>
     </div>
-    <div id="members" class="directory-grid" aria-live="polite"><p>Loading businesses…</p></div>
+
+    <div
+      class="directory-controls"
+      role="group"
+      aria-label="Directory display options">
+
+      <button
+        id="grid-view"
+        class="view-button active"
+        type="button"
+        aria-pressed="true">
+        Grid View
+      </button>
+
+      <button
+        id="list-view"
+        class="view-button"
+        type="button"
+        aria-pressed="false">
+        List View
+      </button>
+
+    </div>
+
+    <div
+      id="members"
+      class="directory-grid"
+      aria-live="polite">
+      <p>Loading businesses…</p>
+    </div>
+
   </main>
+
   <footer class="site-footer">
-    <div><strong>Lagos Business Chamber</strong><p>Lagos, Nigeria</p></div>
-    <div><p>© <span id="current-year"></span> Lagos Business Chamber</p><p>Last modified: <span id="lastModified"></span></p></div>
+
+    <div>
+      <strong>Lagos Business Chamber</strong>
+      <p>Lagos, Nigeria</p>
+    </div>
+
+    <div>
+      <p>
+        © <span id="current-year"></span>
+        Lagos Business Chamber
+      </p>
+
+      <p>
+        Last modified:
+        <span id="lastModified"></span>
+      </p>
+    </div>
+
   </footer>
+
 </body>
 </html>

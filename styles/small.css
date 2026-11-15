@@ -4,9 +4,6 @@
     box-sizing: border-box;
 }
 
-
-
-
 :root {
     --primary-color: #174ea6;
     --secondary-color: #123b75;
@@ -34,7 +31,7 @@
     --footer-muted: #d6e0ed;
 
     --shadow-color: #19325a;
-    --white: #ffffff;
+    --white: #f3d4d4;
 }
 
 
@@ -303,9 +300,6 @@ p {
     font-weight: 700;
 }
 
-/* ==============================
-   COURSE GRID
-================================= */
 
 .course-grid {
     display: grid;

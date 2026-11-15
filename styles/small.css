@@ -1,8 +1,3 @@
-
-/* ==============================
-   CSS RESET
-================================= */
-
 * {
     margin: 0;
     padding: 0;
@@ -42,9 +37,6 @@
     --white: #ffffff;
 }
 
-/* ==============================
-   GLOBAL STYLES
-================================= */
 
 body {
     font-family: "Roboto", sans-serif;
@@ -67,10 +59,6 @@ a {
 button {
     font: inherit;
 }
-
-/* ==============================
-   HEADER
-================================= */
 
 header {
     position: relative;
@@ -104,9 +92,6 @@ header {
     overflow-wrap: anywhere;
 }
 
-/* ==============================
-   NAVIGATION
-================================= */
 
 .navigation {
     display: none;
@@ -144,9 +129,6 @@ button:focus-visible {
     outline-offset: 3px;
 }
 
-/* ==============================
-   MOBILE NAVIGATION
-================================= */
 
 .navigation.show {
     display: flex;
@@ -178,10 +160,6 @@ button:focus-visible {
     color: var(--secondary-color);
 }
 
-/* ==============================
-   MAIN CONTENT
-================================= */
-
 main {
     width: min(1100px, 90%);
     margin: 0 auto;
@@ -206,10 +184,6 @@ p {
     max-width: 65ch;
 }
 
-/* ==============================
-   HOME LAYOUT
-================================= */
-
 .home-layout {
     display: grid;
     grid-template-columns: 1fr;
@@ -232,10 +206,6 @@ p {
 .about-panel p + p {
     margin-top: 1rem;
 }
-
-/* ==============================
-   PHOTO PLACEHOLDER
-================================= */
 
 .photo-placeholder {
     display: flex;
@@ -317,10 +287,6 @@ p {
     background-color: var(--primary-color);
     color: var(--white);
 }
-
-/* ==============================
-   COURSE SUMMARY
-================================= */
 
 .course-summary {
     display: flex;
@@ -427,10 +393,6 @@ p {
     padding: 1rem;
     color: var(--muted-color);
 }
-
-/* ==============================
-   FOOTER
-================================= */
 
 footer {
     display: flex;

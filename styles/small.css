@@ -406,10 +406,6 @@ p {
     color: var(--success-text);
 }
 
-/* ==============================
-   COMPLETION NOTE
-================================= */
-
 .completion-note {
     display: flex;
     align-items: center;

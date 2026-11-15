@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Discover local businesses, upcoming events, and business opportunities with the Lagos Business Chamber.">
   <meta name="author" content="Lagos Business Chamber">
-  <meta name="theme-color" content="#174ea6">
   <meta property="og:title" content="Lagos Business Chamber | Home">
   <meta property="og:description" content="Discover and connect with businesses across Lagos, Nigeria.">
   <meta property="og:type" content="website">
@@ -24,12 +23,12 @@
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="index.html" aria-label="Lagos Business Chamber home">
-      <span class="brand-mark" aria-hidden="true"><img src="images/logo.svg"></span>
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><img src="images/logo.svg" alt="Our company Logo" width="64" height="64"></span>
       <span><strong>Lagos Business Chamber</strong><small>Connecting businesses. Building Lagos.</small></span>
     </a>
-    <button class="menu" type="button" aria-label="Open navigation menu" aria-expanded="false"></button>
-    <nav class="navigation" aria-label="Main navigation">
+    <a class="menu" type="button" aria-label="Open navigation menu" aria-expanded="false"></a>
+    <nav class="navigation">
       <a class="current" href="index.html" aria-current="page">Home</a>
       <a href="directory.html">Directory</a>
       <a href="join.html">Join</a>
@@ -39,8 +38,8 @@
   </header>
 
   <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <img src="images/hero.webp" alt="Illustrated Lagos skyline showing the city and its business district" width="1600" height="700">
+    <section class="hero">
+      <img src="images/hero.webp" alt="Illustrated Lagos skyline showing the city and its business district" width="1300" height="750">
       <div class="hero-content">
         <p class="eyebrow">Lagos means business</p>
         <h1 id="hero-title">Where local businesses connect and grow</h1>
@@ -74,7 +73,7 @@
           <p>Loading current weather…</p>
         </div>
         <h3 class="forecast-heading">3-Day Forecast</h3>
-        <div id="weather-forecast" class="forecast-grid" aria-live="polite">
+        <div id="weather-forecast" class="forecast-grid">
           <p>Loading forecast…</p>
         </div>
         <p class="weather-note">Weather data provided by OpenWeatherMap.</p>

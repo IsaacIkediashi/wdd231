@@ -22,9 +22,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .navigation.show { display: flex; }
 .navigation a { text-decoration: none; color: var(--text-color); padding: .6rem .8rem; border-radius: 6px; font-weight: 600; }
 .navigation a.current, .navigation a:hover { color: var(--primary-color); background: var(--secondary-color); }
-.menu, .theme-toggle, .view-button { border: 1px solid var(--border-color); border-radius: 7px; background: var(--card-color); color: var(--text-color); padding: .55rem .8rem; cursor: pointer; font: inherit; }
+.menu, .theme-toggle, .view-button { border: 1px solid var(--border-color); border-radius: 7px; background: var(--card-color); color: var(--text-color); padding: .55rem .8rem; cursor: pointer;}
 .menu { font-size: 1.25rem; }
-.hero { position: relative; height: clamp(390px, 55vw, 560px); margin: 1.25rem auto 2rem; width: min(92%, 1400px); overflow: hidden; border-radius: 14px; background: #123b75; }
+.menu::after{ content: "☰";}
+.menu.show::after{ content: "×";}
+.hero { position: relative; height: clamp(390px, 55vw, 560px); margin: 1.25rem auto 2rem; width: min(92%, 1400px); overflow: hidden; border-radius: 14px;}
 .hero > img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .hero-content { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 1rem; padding: 2rem 7%; color: var(--white-color); background: linear-gradient(90deg, rgb(0 35 27 / 88%), rgb(0 35 27 / 62%) 58%, rgb(0 35 27 / 8%)); }
 .hero-content h1 { max-width: 680px; font: 800 clamp(2rem, 5vw, 3.5rem)/1.1 "Manrope", sans-serif; letter-spacing: -.04em; }
@@ -87,4 +89,3 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .dark-mode .brand small, .dark-mode .section-heading > p:last-child, .dark-mode .business-heading p, .dark-mode .event-meta { color: #aab6c6; }
 .dark-mode .forecast-card { background: #263244; }
 .dark-mode .membership-badge { background: #594a25; color: #ffe49a; }
-@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }

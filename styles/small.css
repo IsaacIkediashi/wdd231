@@ -135,9 +135,7 @@ header {
     content: "×";
 }
 
-/* ==============================
-   FOCUS ACCESSIBILITY
-================================= */
+
 
 .menu:focus-visible,
 a:focus-visible,
@@ -273,9 +271,7 @@ p {
     font-size: 0.9rem;
 }
 
-/* ==============================
-   CERTIFICATE PANEL
-================================= */
+
 
 .certificate-panel {
     grid-column: 1 / -1;

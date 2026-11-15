@@ -1,6 +1,4 @@
-// OpenWeatherMap current conditions and 3-day forecast for Lagos, Nigeria.
-// Get an API key from https://openweathermap.org/api and replace the placeholder.
-const OPEN_WEATHER_API_KEY = "YOUR_OPENWEATHERMAP_API_KEY";
+const OPEN_WEATHER_API_KEY = "49d57e9e0b0528ab764052d88d3fa97d";
 const WEATHER_CITY = "Lagos";
 const WEATHER_COUNTRY = "NG";
 
@@ -59,7 +57,6 @@ async function loadWeather() {
     currentDetails.append(temperature, description, feelsLike);
     currentWeatherContainer.append(currentDetails);
 
-    // The forecast API returns readings every three hours. Use the reading nearest 12:00 for each day.
     const grouped = new Map();
     forecast.list.forEach((item) => {
       const date = item.dt_txt.slice(0, 10);

@@ -16,12 +16,6 @@ function formatDay(dateString) {
 async function loadWeather() {
   if (!currentWeatherContainer || !forecastContainer) return;
 
-  if (OPEN_WEATHER_API_KEY === "YOUR_OPENWEATHERMAP_API_KEY") {
-    currentWeatherContainer.textContent = "Add your OpenWeatherMap API key in scripts/weather.js to display live weather.";
-    forecastContainer.textContent = "The three-day forecast will appear here after the API key is added.";
-    return;
-  }
-
   const query = `q=${encodeURIComponent(`${WEATHER_CITY},${WEATHER_COUNTRY}`)}&units=metric&appid=${OPEN_WEATHER_API_KEY}`;
   const currentUrl = `https://api.openweathermap.org/data/2.5/weather?${query}`;
   const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?${query}`;

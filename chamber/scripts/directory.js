@@ -1,11 +1,9 @@
-// Shared navigation, theme, footer, and business directory functionality.
 const navigation = document.querySelector(".navigation");
 const menu = document.querySelector(".menu");
 const membersContainer = document.querySelector("#members");
 const gridButton = document.querySelector("#grid-view");
 const listButton = document.querySelector("#list-view");
 
-// Hamburger navigation
 if (navigation && menu) {
   menu.addEventListener("click", () => {
     const isOpen = menu.getAttribute("aria-expanded") === "true";
@@ -25,7 +23,6 @@ if (navigation && menu) {
   });
 }
 
-// Directory view controls
 if (membersContainer && gridButton && listButton) {
   gridButton.addEventListener("click", () => {
     membersContainer.classList.remove("directory-list");
@@ -53,16 +50,6 @@ const now = new Date();
 
 if (currentYear) currentYear.textContent = now.getFullYear();
 if (lastModified) lastModified.textContent = document.lastModified;
-
-// Theme toggle
-const themeButton = document.querySelector("#theme-toggle");
-if (themeButton) {
-  themeButton.addEventListener("click", () => {
-    const isDark = document.body.classList.toggle("dark-mode");
-    themeButton.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
-    themeButton.textContent = isDark ? "☀" : "◐";
-  });
-}
 
 function getMembership(level) {
   const normalizedLevel = Number(level);

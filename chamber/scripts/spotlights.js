@@ -1,4 +1,3 @@
-// Randomly display two or three Gold/Silver chamber members on the homepage.
 const spotlightsContainer = document.querySelector("#spotlights-container");
 
 function shuffleArray(items) {
